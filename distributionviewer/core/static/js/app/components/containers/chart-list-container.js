@@ -7,7 +7,7 @@ import * as metricApi from '../../api/metric-api';
 
 class ChartListContainer extends React.Component {
   componentDidMount() {
-    metricApi.getMetrics();
+    metricApi.getMetrics(this.props.query);
   }
 
   render() {
@@ -15,6 +15,11 @@ class ChartListContainer extends React.Component {
       <ChartList {...this.props} />
     );
   }
+}
+
+ChartListContainer.propTypes = {
+  items: React.PropTypes.array.isRequired,
+  query: React.PropTypes.object
 }
 
 const mapStateToProps = function(store) {

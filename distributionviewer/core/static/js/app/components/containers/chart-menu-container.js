@@ -7,13 +7,14 @@ import { ChartMenu } from '../views/chart-menu';
 class ChartMenuContainer extends React.Component {
   render() {
     return (
-      <ChartMenu items={this.props.items} />
+      <ChartMenu {...this.props} />
     );
   }
 }
 
 ChartMenuContainer.propTypes = {
   items: React.PropTypes.array.isRequired,
+  query: React.PropTypes.object
 }
 
 const mapStateToProps = function(store) {
