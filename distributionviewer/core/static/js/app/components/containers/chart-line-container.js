@@ -7,7 +7,7 @@ import ChartLine from '../views/chart-line';
 
 
 export default class ChartLineContainer extends React.Component {
-  componentDidMount() {
+  componentWillUpdate() {
     let props = this.props;
     let line = d3Shape.line()
                 .x(d => {return props.xScale(d.x);})

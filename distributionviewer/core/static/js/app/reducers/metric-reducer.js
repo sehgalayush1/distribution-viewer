@@ -14,7 +14,7 @@ const initialState = {
   isFetching: false,
   item: {},
   items: [],
-  points,
+  data: [],
   status: 200
 };
 
@@ -30,7 +30,7 @@ const metricReducer = function(state = initialState, action) {
     case types.GETTING_METRIC:
       return Object.assign({}, state, {isFetching: true});
     case types.GET_METRIC_SUCCESS:
-      return Object.assign({}, state, {isFetching: false, item: action.item, points: action.points});
+      return Object.assign({}, state, {isFetching: false, item: action.item, data: action.data});
     case types.GET_METRIC_FAILURE:
       return Object.assign({}, state, {isFetching: false, status: action.status});
   }

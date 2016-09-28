@@ -31,7 +31,7 @@ export function getMetricSuccess(item, points) {
   return {
     type: types.GET_METRIC_SUCCESS,
     item,
-    points,
+    data: points
   };
 }
 

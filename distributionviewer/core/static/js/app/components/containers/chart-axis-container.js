@@ -6,9 +6,11 @@ import ChartAxis from '../views/chart-axis';
 
 
 export class ChartAxisContainer extends React.Component {
-  componentDidMount() {
+  componentWillUpdate() {
     let props = this.props;
     let axisGenerator = props.axisType === 'x' ? d3Axis.axisBottom : d3Axis.axisLeft;
+
+    if (!props.scale) return;
 
     let axis = axisGenerator(props.scale)
                 .tickSizeInner(-props.size)
